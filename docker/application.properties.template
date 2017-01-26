@@ -1,0 +1,9 @@
+#!bin/bash
+cat << eof > application.properties
+service.port=8080
+spring.jpa.hibernate.ddl-auto=none
+spring.datasource.url=${DATASOURCE_URL}
+spring.datasource.username=${DATASOURCE_USERNAME}
+spring.datasource.password=${DATASOURCE_PASSWORD}
+spring.jpa.properties.hibernate.default_schema=${DATASOURCE_SCHEMA}
+eof

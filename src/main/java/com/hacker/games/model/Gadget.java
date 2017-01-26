@@ -19,6 +19,9 @@ public class Gadget {
 
     private String description;
 
+    @Column(name = "pic_url")
+    private String pictureUrl;
+
     public int getId() {
         return id;
     }
@@ -41,5 +44,13 @@ public class Gadget {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 }

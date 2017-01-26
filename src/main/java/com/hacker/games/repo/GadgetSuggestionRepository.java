@@ -10,5 +10,6 @@ import java.util.List;
  */
 public interface GadgetSuggestionRepository extends JpaRepository<GadgetSuggestion,Integer> {
 
-        List<GadgetSuggestion> findByMobilityScoreIdAndBodyPartId(Integer mobilityScoreId, Integer bodyPartId);
+    List<GadgetSuggestion> findByMobilityScoreIdAndBodyPartId(Integer mobilityScoreId, Integer bodyPartId);
+
 }

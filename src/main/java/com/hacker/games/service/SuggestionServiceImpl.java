@@ -1,9 +1,8 @@
 package com.hacker.games.service;
 
 import com.hacker.games.dto.Input;
-import com.hacker.games.model.BodyPart;
 import com.hacker.games.model.GadgetSuggestion;
-import com.hacker.games.model.MobilityScore;
+import com.hacker.games.repo.BodyPartRepository;
 import com.hacker.games.repo.GadgetSuggestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,21 +18,20 @@ public class SuggestionServiceImpl implements SuggestionService {
 
     @Autowired
     GadgetSuggestionRepository gadgetSuggestionRepository;
+    @Autowired
+    BodyPartRepository bodyPartRepository;
+
     @Override
-    public List<GadgetSuggestion> getSuggestions(List<Input> inputs) {
-        List<GadgetSuggestion> gadgetSuggestions = new ArrayList<>();
-//        for(Input input: inputs) {
-//            gadgetSuggestions.add(gadgetSuggestionRepository.findOne(Integer.valueOf(input.getValue())));
-//        }
+    public List<List<GadgetSuggestion>> getSuggestions(List<Input> inputs) {
 
-        MobilityScore mobilityScore = new MobilityScore();
-        mobilityScore.setId(1);
-        mobilityScore.setScale("Good");
-        BodyPart bodyPart = new BodyPart();
-        bodyPart.setId(1);
-        bodyPart.setName("Eyebrows");
+        List<List<GadgetSuggestion>> gadgetSuggestions= new ArrayList<>();
+        for(Input input: inputs) {
+            input.setId(bodyPartRepository.findByNameLike(input.getName()).getId());
+        }
 
-        gadgetSuggestions = gadgetSuggestionRepository.findByMobilityScoreIdAndBodyPartId(mobilityScore.getId(), bodyPart.getId());
+        for(Input input:inputs) {
+            gadgetSuggestions.add(gadgetSuggestionRepository.findByMobilityScoreIdAndBodyPartId(Integer.valueOf(input.getValue()), input.getId()));
+        }
 
         return gadgetSuggestions;
     }

@@ -8,6 +8,8 @@ public class Input {
     String name; // the body part name
     String value;// the scoring
 
+    int id; // the body part id which we populate at run-time
+
     public String getName() {
         return name;
     }
@@ -22,5 +24,13 @@ public class Input {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

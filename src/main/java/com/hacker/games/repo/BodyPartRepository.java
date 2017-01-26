@@ -10,4 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BodyPartRepository extends JpaRepository<BodyPart,Integer> {
 
+    BodyPart findByNameLike(String name);
+
 }

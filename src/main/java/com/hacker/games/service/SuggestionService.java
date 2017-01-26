@@ -12,5 +12,5 @@ import java.util.List;
 @Service
 public interface SuggestionService {
 
-    List<GadgetSuggestion> getSuggestions(List<Input> inputs);
+    List<List<GadgetSuggestion>> getSuggestions(List<Input> inputs);
 }

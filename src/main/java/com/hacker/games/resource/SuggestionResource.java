@@ -1,7 +1,6 @@
 package com.hacker.games.resource;
 
 import com.hacker.games.dto.Input;
-import com.hacker.games.repo.BodyPartRepository;
 import com.hacker.games.service.SuggestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;

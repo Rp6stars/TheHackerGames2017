@@ -1,12 +1,22 @@
 package com.hacker.games.model;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 /**
  * Created by eniko.pal on 26/01/2017.
  */
+@Entity
+@Table(name = "gadget")
 public class Gadget {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @NotNull
     private String name;
+
     private String description;
 
     public int getId() {

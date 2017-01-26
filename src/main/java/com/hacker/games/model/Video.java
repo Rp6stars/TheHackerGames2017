@@ -18,6 +18,9 @@ public class Video {
     @Column(name = "youtube_id")
     private String youtubeId;
 
+    @Column(name = "video_blurb")
+    private String videoBlurb;
+
 //    private Set<Gadget> gadgets;
 
     public int getId() {
@@ -36,7 +39,15 @@ public class Video {
         this.youtubeId = youtubeId;
     }
 
-//    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "videos")
+    public String getVideoBlurb() {
+        return videoBlurb;
+    }
+
+    public void setVideoBlurb(String videoBlurb) {
+        this.videoBlurb = videoBlurb;
+    }
+
+    //    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "videos")
 //    public Set<Gadget> getGadgets() {
 //        return gadgets;
 //    }

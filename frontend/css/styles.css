@@ -1,0 +1,220 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+  font-family: 'quattrocento_sansregular', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'oswaldregular', sans-serif;
+}
+
+html {
+    box-sizing: border-box
+}
+html * {
+    box-sizing: inherit;
+    z-index: inherit;
+    -webkit-font-smoothing: subpixel-antialiased
+    color: #003959;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* dark blue  #003959; */
+/* light blue #209BFF */
+/* orange #DF6400 */
+/* yellow #FCAD18 */
+/* light grey #E5EBEE */
+/* lightest grey #F2F5F6 */
+
+h2 {
+  font-size: 40px;
+}
+
+.heading-underlined {
+  border-bottom: 1px solid #003959;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.section-description {
+
+}
+
+.btn {
+  background-color: #FCAD18;
+  background: linear-gradient(180deg, #DF6400 0%, #FCAD18 100%);
+  font-family: 'oswaldbold';
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 34px;
+  padding: 14px;
+  color: #003959;
+  border: none;
+  box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.4);
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.header {
+  background-image: url('../images/logo.png');
+  background-repeat: no-repeat;
+  background-position: 20px 20px;
+  background-color: rgb(3, 43, 104);
+  height:110px;
+  background-size: 20%;
+}
+
+.main-nav {
+
+}
+
+.main-nav-list {
+  list-style: none;
+  text-align: center;
+  box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.4);
+}
+
+.main-nav-list li {
+  display: inline-block;
+}
+
+.main-nav-list li a {
+  display: inline-block;
+  text-decoration: none;
+  display: block;
+  font-family: 'oswaldbold', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #000529;
+  font-weight: 900;
+  padding: 15px 30px;
+}
+
+.main-nav-list li a:hover {
+  background: #f58220;  /*orange*/
+}
+
+.main-nav-list_home-icon {
+  font-size: 30px; line-height: 0px;
+}
+
+.main {
+  max-width: 1000px;
+  margin: 0px auto;
+  padding-top: 50px;
+}
+
+.trafficlight-description {
+  padding: 25px 0px;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 25px;
+}
+
+.trafficlight-container {
+  text-align: right;
+}
+
+.trafficlight-widget {
+  font-size: 0px;
+}
+
+.trafficlight-widget_item {
+  display: inline-block;
+  font-size: 18px;
+  padding: 10px  15px;
+  margin: 0px 5px;
+
+  background-color: #E5EBEE;
+  border: 1px solid #003959;
+  border-radius: 2px;
+
+  font-weight: bold;
+  line-height: 20px;
+}
+
+.trafficlight-widget_item.selected {
+  background-color: #FCAD18;
+}
+
+.divider {
+  border-bottom: 1px solid red;
+  padding-top: 5px;
+  margin-bottom: 5px;
+}
+
+.trafficlight-widget_item--good {
+  /*background-color: green;*/
+}
+
+.trafficlight-widget_item--some {
+  /*background-color: yellow;*/
+}
+
+.trafficlight-widget_item--none {
+  /*background-color: red;*/
+}
+
+.trafficlight-widget_item {
+
+}

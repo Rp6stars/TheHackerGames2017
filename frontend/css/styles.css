@@ -61,8 +61,12 @@ html {
 html * {
     box-sizing: inherit;
     z-index: inherit;
-    -webkit-font-smoothing: subpixel-antialiased
     color: #003959;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.question-section {
+  padding-bottom: 20px;
 }
 
 .text-left {
@@ -88,6 +92,13 @@ h2 {
   font-size: 40px;
 }
 
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    margin: 0px auto;
+    display: block;
+}
+
 .heading-underlined {
   border-bottom: 1px solid #003959;
   padding-bottom: 15px;
@@ -100,15 +111,14 @@ h2 {
 
 .btn {
   background-color: #FCAD18;
-  background: linear-gradient(180deg, #DF6400 0%, #FCAD18 100%);
   font-family: 'oswaldbold';
   font-size: 23px;
   font-weight: bold;
   line-height: 34px;
-  padding: 14px;
+  padding: 10px 30px;
   color: #003959;
   border: none;
-  box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.4);
+  border-radius: 5px;
 }
 
 .btn:hover {
@@ -122,16 +132,17 @@ h2 {
   background-color: rgb(3, 43, 104);
   height:110px;
   background-size: 20%;
+  border: none;
+  border-bottom: 4px solid #f58220;
 }
 
 .main-nav {
-
 }
 
 .main-nav-list {
   list-style: none;
   text-align: center;
-  box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.4);
 }
 
 .main-nav-list li {
@@ -161,11 +172,15 @@ h2 {
 .main {
   max-width: 1000px;
   margin: 0px auto;
-  padding-top: 50px;
+  padding: 50px 0px 200px;
+}
+
+.abilities-list:nth-child(even) {
+  background: #F2F5F6;
 }
 
 .trafficlight-description {
-  padding: 25px 0px;
+  padding: 10px 0px 0px 0px;
   font-size: 22px;
   font-weight: bold;
   line-height: 25px;
@@ -177,12 +192,13 @@ h2 {
 
 .trafficlight-widget {
   font-size: 0px;
+  float: right;
 }
 
 .trafficlight-widget_item {
   display: inline-block;
   font-size: 18px;
-  padding: 10px  15px;
+  padding: 8px  15px;
   margin: 0px 5px;
 
   background-color: #E5EBEE;
@@ -192,8 +208,11 @@ h2 {
   font-weight: bold;
   line-height: 20px;
 }
-
-.trafficlight-widget_item.selected {
+.trafficlight-widget_item:hover {
+  background-color: #d0dbe1;
+}
+.trafficlight-widget_item.selected,
+.trafficlight-widget_item:hover.selected {
   background-color: #FCAD18;
 }
 
@@ -216,5 +235,56 @@ h2 {
 }
 
 .trafficlight-widget_item {
+
+}
+
+.face {
+  position: relative;
+}
+
+.face_eye {
+  position: absolute;
+  top: 100px;
+  background-color: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  border: 1px solid grey;
+}
+
+.face_eye--left {
+  left: 60px;
+}
+.face_eye--right {
+  right: 60px;
+}
+
+.face_eye_pupil {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  background: #000;
+  border-radius: 20px;
+   transition: top 0.5s, left 0.5s;
+}
+
+.platforms-picker {
+  list-style: none;
+  font-size: 0px;
+}
+
+
+.platforms-picker_item{
+  display: inline-block;
+  font-size: 18px;
+}
+
+.platforms-picker_item_title {
+
+}
+
+.platforms-picker_item_icon {
 
 }

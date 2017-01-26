@@ -5,6 +5,7 @@
       generateTrafficlightWidget($(this));
     });
     initRadioHandler();
+    initPlatformsHandler();
     initStep1();
   });
 
@@ -17,23 +18,35 @@
     });
   }
 
-  function initStep1() {
-    $('.js-left-hand-thumb').hide();
-    $('.js-left-hand-fingers').hide();
-    $('.js-right-hand-thumb').hide();
-    $('.js-right-hand-fingers').hide();
+  function initPlatformsHandler() {
+    $('.js-platforms').on('click', '.js-platforms-item', function (ev) {
+      $this = $(this);
+      if ($this.find('input[type="checkbox"]').prop('checked') === true ) {
+          $this.addClass('active');
+      } else {
+        $this.removeClass('active');
+      }
 
+    });
+  }
+
+  function initStep1() {
     handleHandChange('left');
     handleHandChange('right');
   }
 
   function handleHandChange(hand) {
+
+    var $fingers = $('.js-' + hand + '-hand-fingers');
+    var $thumb = $('.js-' + hand + '-hand-thumb');
+
+    $thumb.hide();
+    $fingers.hide();
+
+
     $('.js-' + hand + '-hand').on('change', 'input[type="radio"]', function (ev) {
       $this = $(this);
       console.log(hand, $this.val());
-
-      var $fingers = $('.js-' + hand + '-hand-fingers');
-      var $thumb = $('.js-' + hand + '-hand-thumb');
 
       if ($this.val() > 1) {
 
@@ -51,11 +64,11 @@
     });
   }
 
-function uncheckRadio($el) {
-  $el.prop('checked', false);
-  $siblings = $el.closest('.js-trafficlight-widget').find('label');
-  $siblings.removeClass('selected');
-}
+  function uncheckRadio($el) {
+    $el.prop('checked', false);
+    var $siblings = $el.closest('.js-trafficlight-widget').find('label');
+    $siblings.removeClass('selected');
+  }
 
   function generateTrafficlightWidget($selector) {
     var name = $selector.data('name');

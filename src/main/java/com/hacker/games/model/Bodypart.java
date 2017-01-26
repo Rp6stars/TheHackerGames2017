@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "body_part")
-public class Bodypart {
+public class BodyPart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

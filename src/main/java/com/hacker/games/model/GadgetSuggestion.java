@@ -15,7 +15,7 @@ public class GadgetSuggestion {
 
     @ManyToOne
     @JoinColumn(name = "body_part_id")
-    private Bodypart bodypart;
+    private BodyPart bodypart;
 
     @ManyToOne
     @JoinColumn(name = "mobility_score_id")
@@ -33,11 +33,11 @@ public class GadgetSuggestion {
         this.id = id;
     }
 
-    public Bodypart getBodypart() {
+    public BodyPart getBodypart() {
         return bodypart;
     }
 
-    public void setBodypart(Bodypart bodypart) {
+    public void setBodypart(BodyPart bodypart) {
         this.bodypart = bodypart;
     }
 

@@ -1,6 +1,7 @@
 package com.hacker.games.resource;
 
 import com.hacker.games.dto.Input;
+import com.hacker.games.repo.VideoRepository;
 import com.hacker.games.service.SuggestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,10 +21,17 @@ public class SuggestionResource {
     @Autowired
     SuggestionService suggestionService;
 
+    @Autowired
+    VideoRepository videoRepository;
 
     @RequestMapping(value = "/getSuggestions",method = RequestMethod.POST)
     public List<?> getSuggestions(@RequestBody List<Input> inputs) throws Exception{
         return suggestionService.getSuggestions(inputs);
+    }
+
+    @RequestMapping(value = "/getSuggestions",method = RequestMethod.GET)
+    public List<?> getSuggestions() throws Exception{
+        return videoRepository.findAll();
     }
 
 }

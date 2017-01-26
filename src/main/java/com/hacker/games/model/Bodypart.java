@@ -1,12 +1,20 @@
 package com.hacker.games.model;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 /**
  * Created by eniko.pal on 26/01/2017.
  */
+@Entity
+@Table(name = "body_part")
 public class Bodypart {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @NotNull
     private String name;
 
     public int getId() {

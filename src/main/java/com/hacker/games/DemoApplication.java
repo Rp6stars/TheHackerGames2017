@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableAutoConfiguration
-@ComponentScan
+@ComponentScan({ "com.hacker" })
 public class DemoApplication {
 
 	public static void main(String[] args) {

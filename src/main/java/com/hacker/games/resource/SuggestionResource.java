@@ -2,6 +2,7 @@ package com.hacker.games.resource;
 
 import com.hacker.games.dto.Input;
 import com.hacker.games.repo.BodyPartRepository;
+import com.hacker.games.service.SuggestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +19,12 @@ import java.util.List;
 public class SuggestionResource {
 
     @Autowired
-    BodyPartRepository bodyPartRepository;
+    SuggestionService suggestionService;
+
 
     @RequestMapping(value = "/getSuggestions",method = RequestMethod.POST)
     public List<?> getSuggestions(@RequestBody List<Input> inputs) throws Exception{
-        return bodyPartRepository.findAll();
+        return suggestionService.getSuggestions(inputs);
     }
 
 }

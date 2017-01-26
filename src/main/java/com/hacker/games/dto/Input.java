@@ -5,8 +5,8 @@ package com.hacker.games.dto;
  */
 public class Input {
 
-    String name;
-    String value;
+    String name; // the body part name
+    String value;// the scoring
 
     public String getName() {
         return name;

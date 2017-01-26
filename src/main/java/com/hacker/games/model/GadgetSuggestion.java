@@ -1,6 +1,7 @@
 package com.hacker.games.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by eniko.pal on 26/01/2017.
@@ -13,6 +14,7 @@ public class GadgetSuggestion {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "body_part_id")
     private BodyPart bodypart;
@@ -21,6 +23,7 @@ public class GadgetSuggestion {
     @JoinColumn(name = "mobility_score_id")
     private MobilityScore mobilityScore;
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "gadget_id")
     private Gadget gadget;

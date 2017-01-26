@@ -22,6 +22,11 @@ public class Gadget {
     @Column(name = "pic_url")
     private String pictureUrl;
 
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "gadget_video", joinColumns = @JoinColumn(name = "gadget_id"),
+//            inverseJoinColumns = @JoinColumn(name = "video_id"))
+//    private Set<Video> videos;
+
     public int getId() {
         return id;
     }
@@ -53,4 +58,12 @@ public class Gadget {
     public void setPictureUrl(String pictureUrl) {
         this.pictureUrl = pictureUrl;
     }
+//
+//    public Set<Video> getVideos() {
+//        return videos;
+//    }
+//
+//    public void setVideos(Set<Video> videos) {
+//        this.videos = videos;
+//    }
 }

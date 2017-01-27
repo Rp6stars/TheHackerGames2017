@@ -1,4 +1,4 @@
-package com.hacker.games.dto;
+package com.hacker.games.api.model;
 
 /**
  * Created by alireza.fallahi on 26/01/2017.

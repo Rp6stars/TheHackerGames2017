@@ -1,4 +1,7 @@
-package com.hacker.games.model;
+package com.hacker.games.api.model;
+
+import com.hacker.games.model.Gadget;
+import com.hacker.games.model.Video;
 
 import java.util.List;
 

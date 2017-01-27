@@ -1,7 +1,7 @@
 package com.hacker.games.service;
 
-import com.hacker.games.dto.Input;
-import com.hacker.games.model.GadgetSuggestion;
+import com.hacker.games.api.model.Input;
+import com.hacker.games.api.model.ResponseContent;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,5 +12,5 @@ import java.util.List;
 @Service
 public interface SuggestionService {
 
-    List<List<GadgetSuggestion>> getSuggestions(List<Input> inputs);
+    ResponseContent getSuggestions(List<Input> inputs);
 }

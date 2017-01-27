@@ -73,6 +73,7 @@ html * {
     -webkit-font-smoothing: subpixel-antialiased;
 }
 
+
 .question-section {
   padding-bottom: 20px;
 }
@@ -276,7 +277,7 @@ input[type="text"]:focus {
   font-family: 'oswaldbold', sans-serif;
   font-size: 16px;
   text-transform: uppercase;
-  color: #000529;
+  color: #003959;
   font-weight: 900;
   padding: 15px 30px;
 }
@@ -342,7 +343,7 @@ input[type="text"]:focus {
 
 .trafficlight-description {
   padding: 10px 0px 0px 0px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   line-height: 25px;
 }
@@ -405,19 +406,17 @@ input[type="text"]:focus {
 
 .face_eye {
   position: absolute;
-  top: 124px;
-  background-color: #fff;
+  top: 110px;
   width: 20px;
   height: 20px;
   border-radius: 20px;
-  border: 1px solid grey;
 }
 
 .face_eye--left {
-  left: 74px;
+  left: 81px;
 }
 .face_eye--right {
-  right: 74px;
+  left: 110px;
 }
 
 .face_eye_pupil {
@@ -629,4 +628,34 @@ input[type="text"]:focus {
   font-family: 'quattrocento_sansbold';
   line-height: 18px;
   margin-bottom: 5px;
+}
+
+
+/*svg*/
+
+
+.pulse-svg {
+  opacity: 0;
+  animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+  animation-name: FillIn;
+  animation-duration: 1s;
+  animation-delay: 0s;
+}
+
+
+@keyframes FillIn {
+  0% {
+		opacity: 1;
+		/*-webkit-filter: brightness(100%);
+    filter: brightness(100%);*/
+	 }
+	 50% {
+ 		opacity: 0.1;
+ 		/*-webkit-filter: brightness(60%);
+     filter: brightness(60%);*/
+ 	 }
+	 100% {
+ 		opacity: 1;
+ 	 }
 }

@@ -1,89 +1,3 @@
-(function($){
-
-  /* addClass shim
-   ****************************************************/
-  var addClass = $.fn.addClass;
-  $.fn.addClass = function(value) {
-    var orig = addClass.apply(this, arguments);
-
-    var elem,
-      i = 0,
-      len = this.length;
-
-    for (; i < len; i++ ) {
-      elem = this[ i ];
-      if ( elem instanceof SVGElement ) {
-        var classes = $(elem).attr('class');
-        if ( classes ) {
-            var index = classes.indexOf(value);
-            if (index === -1) {
-              classes = classes + " " + value;
-              $(elem).attr('class', classes);
-            }
-        } else {
-          $(elem).attr('class', value);
-        }
-      }
-    }
-    return orig;
-  };
-
-  /* removeClass shim
-   ****************************************************/
-  var removeClass = $.fn.removeClass;
-  $.fn.removeClass = function(value) {
-    var orig = removeClass.apply(this, arguments);
-
-    var elem,
-      i = 0,
-      len = this.length;
-
-    for (; i < len; i++ ) {
-      elem = this[ i ];
-      if ( elem instanceof SVGElement ) {
-        var classes = $(elem).attr('class');
-        if ( classes ) {
-          var index = classes.indexOf(value);
-          if (index !== -1) {
-            classes = classes.substring(0, index) + classes.substring((index + value.length), classes.length);
-            $(elem).attr('class', classes);
-          }
-        }
-      }
-    }
-    return orig;
-  };
-
-  /* hasClass shim
-   ****************************************************/
-  var hasClass = $.fn.hasClass;
-  $.fn.hasClass = function(value) {
-    var orig = hasClass.apply(this, arguments);
-
-    var elem,
-      i = 0,
-      len = this.length;
-
-    for (; i < len; i++ ) {
-      elem = this[ i ];
-      if ( elem instanceof SVGElement ) {
-        var classes = $(elem).attr('class');
-
-        if ( classes ) {
-          if ( classes.indexOf(value) === -1 ) {
-            return false;
-          } else {
-            return true;
-          }
-        } else {
-            return false;
-        }
-      }
-    }
-    return orig;
-  };
-})(jQuery);
-
 // Interface handlers
 (function (window, document, $) {
 
@@ -120,6 +34,7 @@
   function initStep1() {
     handleHandChange('left');
     handleHandChange('right');
+    initRobotHover();
   }
 
   function handleHandChange(hand) {
@@ -170,6 +85,24 @@
     </div>';
 
     $selector.append(widget);
+  }
+
+  function initRobotHover(){
+    $('.js-svg-hover-trigger').on('mouseenter', function () {
+      var elName = $(this).data('svg-el');
+      var $tar = $('#' + elName);
+      if ($tar instanceof jQuery) {
+        $tar.attr('class', 'pulse-svg')
+      }
+    });
+    $('.js-svg-hover-trigger').on('mouseleave', function () {
+      var elName = $(this).data('svg-el');
+      var $tar = $('#' + elName);
+      if ($tar instanceof jQuery) {
+        $tar.attr('class', '')
+      }
+    });
+
   }
 
 
@@ -246,18 +179,18 @@
           xhrObj.setRequestHeader("Accept","application/json");
         },
 
-        // method: "POST",
-        // url: "/api/getSuggestions",
+        method: "POST",
+        url: "/api/getSuggestions", //Proxypassed though apache to avoid cors
 
-        method: "GET",
-        url: "mock.json",
+        // Test data
+        // method: "GET",
+        // url: "mock.json",
 
         data: JSON.stringify(formData)
       });
 
       promise.done(function (response) {
         $('#render-area').load('partials/page2.html', function () {
-          console.log("response", response);
           window.scrollTo(0, 0);
           buildMastheadList();
           $('#featured-products-area').html(returnGadgetList(response.gadgetSet));
@@ -304,8 +237,11 @@
   }
 
   function returnFeaturedVideo(videoListItem) {
-    return '<div class="col-small-7 padded-none"><iframe class="video-large-iframe" src="https://www.youtube.com/embed/' + videoListItem.youtubeId + '?autoplay=0&amp;rel=0&amp;showinfo=0&amp;fs=1&amp;modestbranding=1" frameborder="0" allowfullscreen=""></iframe></div>\
-      <div class="col-small-5 text-color-white padded-double padded-top-quad">\<p>' + videoListItem.videoBlurb + '</p></div>';
+    return '<h2 class="padded-bottom-double">' + videoListItem.gamerName + ' is a match for your abilities, here’s how we helped</h2>\
+      <div class="grid grid--flush background-color-dark-blue">\
+        <div class="col-small-7 padded-none"><iframe class="video-large-iframe" src="https://www.youtube.com/embed/' + videoListItem.youtubeId + '?autoplay=0&amp;rel=0&amp;showinfo=0&amp;fs=1&amp;modestbranding=1" frameborder="0" allowfullscreen=""></iframe></div>\
+        <div class="col-small-5 text-color-white padded-double padded-top-quad">\<p>' + videoListItem.videoBlurb + '</p></div>\
+      </div> <!-- end grid -->';
   }
 
   function returnVideoList(videoList) {
@@ -326,7 +262,7 @@
   function returnVideoListItem(videoListItem) {
     return '<div class="col-small-4">\
       <div class="videos-large-thumb videos-large-thumb--small" style="background-image: url(\'//img.youtube.com/vi/' + videoListItem.youtubeId + '/0.jpg\');"></div>\
-        <p class="text-center">&nbsp;</p>\
+        <p>'+ videoListItem.gamerName + '</p>\
       </div>';
   }
 

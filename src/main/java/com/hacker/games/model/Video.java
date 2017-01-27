@@ -2,11 +2,14 @@ package com.hacker.games.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 /**
  * Created by eniko.pal on 26/01/2017.
  */
 @Entity
+@NamedQuery(name = "Video.findByGadgetId",
+        query = "SELECT v FROM Video v JOIN v.gadgetIDs g where g = ?1")
 @Table(name = "video")
 public class Video {
 
@@ -21,7 +24,12 @@ public class Video {
     @Column(name = "video_blurb")
     private String videoBlurb;
 
-//    private Set<Gadget> gadgets;
+    @ElementCollection(fetch=FetchType.EAGER)
+    @CollectionTable(name="gadget_video",joinColumns=@JoinColumn(name="video_id"))
+    @Column(name="gadget_id")
+    private List<Integer> gadgetIDs;
+
+// private Set<Gadget> gadgets;
 
     public int getId() {
         return id;
@@ -45,6 +53,14 @@ public class Video {
 
     public void setVideoBlurb(String videoBlurb) {
         this.videoBlurb = videoBlurb;
+    }
+
+    public List<Integer> getGadgetIDs() {
+        return gadgetIDs;
+    }
+
+    public void setGadgetIDs(List<Integer> gadgetIDs) {
+        this.gadgetIDs = gadgetIDs;
     }
 
     //    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "videos")

@@ -2,7 +2,6 @@ package com.hacker.games.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.Set;
 
 /**
  * Created by eniko.pal on 26/01/2017.
@@ -23,10 +22,10 @@ public class Gadget {
     @Column(name = "pic_url")
     private String pictureUrl;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "gadget_video", joinColumns = @JoinColumn(name = "gadget_id"),
-            inverseJoinColumns = @JoinColumn(name = "video_id"))
-    private Set<Video> videos;
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "gadget_video", joinColumns = @JoinColumn(name = "gadget_id"),
+//            inverseJoinColumns = @JoinColumn(name = "video_id"))
+//    private Set<Video> videos;
 
     public int getId() {
         return id;
@@ -60,11 +59,11 @@ public class Gadget {
         this.pictureUrl = pictureUrl;
     }
 
-    public Set<Video> getVideos() {
-        return videos;
-    }
-
-    public void setVideos(Set<Video> videos) {
-        this.videos = videos;
-    }
+//    public Set<Video> getVideos() {
+//        return videos;
+//    }
+//
+//    public void setVideos(Set<Video> videos) {
+//        this.videos = videos;
+//    }
 }

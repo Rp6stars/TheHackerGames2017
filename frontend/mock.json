@@ -1,0 +1,58 @@
+{
+  "gadgetSet": [
+    {
+      "id": 4,
+      "name": "Grid Pad Eye",
+      "description": "Including all the features of the Pro model but with integrated eye gaze access. The Grid Pad Eye is available with a wide range of cameras to suit individual need.",
+      "pictureUrl": "https://thinksmartbox.com/wp/wp-content/uploads/2016/05/Grid-Pad-Eye-group-640x360.png"
+    },
+    {
+      "id": 1,
+      "name": "Eyegaze",
+      "description": "Eye gaze systems allow you to navigate and control your computer by tracking where you are looking. There are a variety of eye gaze cameras to help every individual find the most effective solution.",
+      "pictureUrl": "https://thinksmartbox.com/wp/wp-content/uploads/2015/07/Alea-Intelligaze_transparent_800-630x420.png"
+    }
+  ],
+  "videoSet": [
+    {
+      "id": 9,
+      "youtubeId": "UvnzC3PhEMg",
+      "videoBlurb": "Holly, a bubbly ten year-old with cerebral palsy, is racing cars on her PlayStation with her brother, something she's wanted to do for a very long time. She's controlling the cars through switches built into her headrest, which are normally used to steer her powered wheelchair. ",
+      "gamerName": "Holly",
+      "gadgetIDs": [
+        1,
+        4,
+        10
+      ]
+    },
+    {
+      "id": 5,
+      "youtubeId": "ejPzD3o8aOs",
+      "videoBlurb": "Callum suffered a spinal injury as a result of a BMX accident, which left him paralysed from the shoulders down.",
+      "gamerName": "Callum",
+      "gadgetIDs": [
+        1,
+        4
+      ]
+    },
+    {
+      "id": 2,
+      "youtubeId": "30QGu0-uctQ",
+      "videoBlurb": "Here's Ajay, an IT support analyst with spinal muscular atrophy, explaining what it means to regain the ability to enjoy video games. He hadn't been able to play since he lost his hand dexterity when was 17 years old, but we introduced him to a chin-controlled joystick and voice control setup that's got him back in the game.",
+      "gamerName": "Ajay",
+      "gadgetIDs": [
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "youtubeId": "VMlbomJZFSg",
+      "videoBlurb": "Chloe and Ella, two girls with very different disabilities, having a fantastic time in our GamesRoom discovering which computer games they can play. And, most importantly, which ones they can play together.",
+      "gamerName": "Chloe and Ella",
+      "gadgetIDs": [
+        1,
+        4
+      ]
+    }
+  ]
+}

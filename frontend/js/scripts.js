@@ -164,7 +164,7 @@
       $this = $(this);
       $form = $this.closest('form');
       formData = $form.serializeArray();
-      console.log(JSON.stringify(formData));
+      // console.log(JSON.stringify(formData));
 
       $this.addClass('loading');
 
@@ -210,7 +210,6 @@
     var goodList = '';
     var someList = '';
     formData.forEach(function callback(currentValue, index, array) {
-      console.log(currentValue);
       switch (parseInt(currentValue.value)) {
         case 1:
           goodList += '<li>' + currentValue.name + '</li>';
@@ -219,21 +218,21 @@
           someList += '<li>' + currentValue.name + '</li>';
           break;
       }
-
-      if (goodList != '') {
-        $('.js-masthead-good-list').html(goodList);
-      } else {
-        $('.js-masthead-good-list-title').hide();
-        $('.js-masthead-good-list').hide();
-      }
-
-      if (someList != '') {
-        $('.js-masthead-some-list').html(someList);
-      } else {
-        $('.js-masthead-some-list-title').hide();
-        $('.js-masthead-some-list').hide();
-      }
     });
+
+    if (goodList != '') {
+      $('.js-masthead-good-list').html(goodList);
+    } else {
+      $('.js-masthead-good-list-title').hide();
+      $('.js-masthead-good-list').hide();
+    }
+
+    if (someList != '') {
+      $('.js-masthead-some-list').html(someList);
+    } else {
+      $('.js-masthead-some-list-title').hide();
+      $('.js-masthead-some-list').hide();
+    }
   }
 
   function returnFeaturedVideo(videoListItem) {

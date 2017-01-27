@@ -13,5 +13,5 @@ import java.util.Set;
 @Service
 public interface VideoService {
 
-    Set<Video> getVideosForGadgetList(List<Gadget> gadgetList);
+    List<Video>  getVideosForGadgetList(List<Gadget> gadgetList);
 }

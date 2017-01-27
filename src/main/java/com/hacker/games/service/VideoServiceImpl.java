@@ -6,6 +6,7 @@ import com.hacker.games.repo.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -20,13 +21,13 @@ public class VideoServiceImpl implements VideoService{
     VideoRepository videoRepository;
 
     @Override
-    public Set<Video> getVideosForGadgetList(List<Gadget> gadgetList) {
-        Set<Video> videoSet = new HashSet<>();
+    public List<Video> getVideosForGadgetList(List<Gadget> gadgetList) {
+        List<Video> videoList = new ArrayList<>();
 
         for (Gadget gadget : gadgetList) {
-            videoSet.addAll(videoRepository.findByGadgetId(gadget.getId()));
+            videoList.addAll(videoRepository.findByGadgetId(gadget.getId()));
         }
 
-        return videoSet;
+        return videoList;
     }
 }

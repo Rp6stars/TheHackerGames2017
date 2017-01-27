@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "gadget")
-public class Gadget {
+public class Gadget implements Content{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

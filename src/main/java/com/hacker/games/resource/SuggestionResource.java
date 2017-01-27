@@ -1,7 +1,10 @@
 package com.hacker.games.resource;
 
 import com.hacker.games.dto.Input;
+import com.hacker.games.model.Content;
 import com.hacker.games.model.Gadget;
+import com.hacker.games.model.GadgetSuggestion;
+import com.hacker.games.model.Video;
 import com.hacker.games.service.SuggestionService;
 import com.hacker.games.service.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -28,16 +32,19 @@ public class SuggestionResource {
     VideoService videoService;
 
     @RequestMapping(value = "/getSuggestions",method = RequestMethod.POST)
-    public List<?> getSuggestions(@RequestBody List<Input> inputs) throws Exception{
-        return suggestionService.getSuggestions(inputs);
-    }
+    public List<Content> getSuggestions(@RequestBody List<Input> inputs) throws Exception {
 
-    @RequestMapping(value = "/getSuggestions",method = RequestMethod.GET)
-    public Set<?> getSuggestions() throws Exception{
-        List<Gadget> gadgets = new ArrayList<>();
-        Gadget gadget = new Gadget();
-        gadget.setId(1);
-        gadgets.add(gadget);
-        return videoService.getVideosForGadgetList(gadgets);
+        List<Content> contents = new ArrayList<>();
+        List<List<GadgetSuggestion>> gadgetSuggestions = suggestionService.getSuggestions(inputs);
+        List<Gadget> lstOfGadgets = new ArrayList<>();
+        for(List<GadgetSuggestion> InnerlstOfGadgetSuggestions : gadgetSuggestions){
+            for(GadgetSuggestion gs: InnerlstOfGadgetSuggestions) {
+                lstOfGadgets.add(gs.getGadget());
+            }
+        }
+        List<Video> videoList = videoService.getVideosForGadgetList(lstOfGadgets);
+        contents.addAll(videoList);
+        contents.addAll(lstOfGadgets);
+        return contents;
     }
 }

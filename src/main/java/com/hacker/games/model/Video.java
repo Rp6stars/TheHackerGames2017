@@ -24,6 +24,9 @@ public class Video {
     @Column(name = "video_blurb")
     private String videoBlurb;
 
+    @Column(name = "gamer_name")
+    private String gamerName;
+
     @ElementCollection(fetch=FetchType.EAGER)
     @CollectionTable(name="gadget_video",joinColumns=@JoinColumn(name="video_id"))
     @Column(name="gadget_id")
@@ -53,6 +56,14 @@ public class Video {
 
     public void setVideoBlurb(String videoBlurb) {
         this.videoBlurb = videoBlurb;
+    }
+
+    public String getGamerName() {
+        return gamerName;
+    }
+
+    public void setGamerName(String gamerName) {
+        this.gamerName = gamerName;
     }
 
     public List<Integer> getGadgetIDs() {

@@ -35,7 +35,7 @@ SET default_with_oids = false;
 
 CREATE TABLE body_part (
     id integer NOT NULL,
-    name character(50)
+    name character varying(50)
 );
 
 
@@ -68,9 +68,9 @@ ALTER SEQUENCE body_part_id_seq OWNED BY body_part.id;
 
 CREATE TABLE gadget (
     id integer NOT NULL,
-    name character(50),
-    description character(500),
-    pic_url character(255)
+    name character varying(50),
+    description character varying(500),
+    pic_url character varying(255)
 );
 
 
@@ -172,7 +172,7 @@ ALTER SEQUENCE gadget_video_id_seq OWNED BY gadget_video.id;
 
 CREATE TABLE mobility_score (
     id integer NOT NULL,
-    scale character(10)
+    scale character varying(10)
 );
 
 
@@ -184,7 +184,9 @@ ALTER TABLE mobility_score OWNER TO irznfnkrlxvtzj;
 
 CREATE TABLE video (
     id integer NOT NULL,
-    youtube_id character(255)
+    youtube_id character varying(255),
+    video_blurb character varying(800),
+    gamer_name character varying(50)
 );
 
 
@@ -251,25 +253,25 @@ ALTER TABLE ONLY video ALTER COLUMN id SET DEFAULT nextval('video_id_seq'::regcl
 --
 
 COPY body_part (id, name) FROM stdin;
-8	Left hand fingers                                 
-9	Right hand                                        
-10	Right hand thumb                                  
-12	Left forearm                                      
-13	Right forearm                                     
-14	Left upper arm                                    
-15	Right upper arm                                   
-16	Left leg                                          
-17	Right leg                                         
-18	Left foot                                         
-1	Eyebrows                                          
-2	Eyes                                              
-3	Speech                                            
-4	Mouth                                             
-5	Neck                                              
-19	Right foot                                        
-11	Right hand fingers                                
-6	Left hand                                         
-7	Left hand thumb                                   
+8	Left hand fingers
+9	Right hand
+10	Right hand thumb
+12	Left forearm
+13	Right forearm
+14	Left upper arm
+15	Right upper arm
+16	Left leg
+17	Right leg
+18	Left foot
+1	Eyebrows
+2	Eyes
+3	Speech
+4	Mouth
+5	Neck
+19	Right foot
+11	Right hand fingers
+6	Left hand
+7	Left hand thumb
 \.
 
 
@@ -285,16 +287,16 @@ SELECT pg_catalog.setval('body_part_id_seq', 26, true);
 --
 
 COPY gadget (id, name, description, pic_url) FROM stdin;
-1	Eyegaze                                           	Eye gaze systems allow you to navigate and control your computer by tracking where you are looking. There are a variety of eye gaze cameras to help every individual find the most effective solution.                                                                                                                                                                                                                                                                                                              	https://thinksmartbox.com/wp/wp-content/uploads/2015/07/Alea-Intelligaze_transparent_800-630x420.png                                                                                                                                                           
-2	Grid Pad Go                                       	Small, thin and lightweight, the Grid Pad Go provides the perfect solution for people using touch or switch access on a portable device.                                                                                                                                                                                                                                                                                                                                                                            	https://thinksmartbox.com/wp/wp-content/uploads/2015/10/Grid-Pad-Go-8-and-10-with-speaker.png                                                                                                                                                                  
-3	Grid Pad Pro                                      	A powerful device that is packed full of features, the Grid Pad Pro includes high-quality audio, multiple access options and our Servus environment control.                                                                                                                                                                                                                                                                                                                                                        	https://thinksmartbox.com/wp/wp-content/uploads/2016/05/Grid-Pad-Pro-Group-640x360.png                                                                                                                                                                         
-4	Grid Pad Eye                                      	Including all the features of the Pro model but with integrated eye gaze access. The Grid Pad Eye is available with a wide range of cameras to suit individual need.                                                                                                                                                                                                                                                                                                                                                	https://thinksmartbox.com/wp/wp-content/uploads/2016/05/Grid-Pad-Eye-group-640x360.png                                                                                                                                                                         
-5	Switch Access Pod for Playstation 3               	The Game Access by LEPMIS PlayStation3 Switch Access Pod (PS3-SAP) replaces the standard controller of the SONY™ Playstation3 (or other games consoles by adding a cross-converter device) to enable gamers of all physical ability to use accessible switches and joysticks to enjoy a huge choice of video games plus subscription film, music and social media.                                                                                                                                                  	http://www.lepmis.co.uk/wp-content/uploads/2015/09/PS3-SAP-new-logo-1024x1024.jpg                                                                                                                                                                              
-6	Heavy Duty Foot Switch                            	This unit is ideal for people who have good control of their feet and ankles, but can also be used by younger gamers who need to use a whole leg movement to activate a switch. This switch has quite a strong return spring and so can support the weight of a small persons foot and leg.                                                                                                                                                                                                                         	http://www.lepmis.co.uk/wp-content/uploads/2015/09/FSX-650x650.jpg                                                                                                                                                                                             
-7	Medium Duty Foot Switch                           	This metal foot switch is ideal for positioning under your foot. It will take the weight of your foot and leg resting on the pivot point, and then only a slight flex of your ankle will operate the switch.                                                                                                                                                                                                                                                                                                        	http://www.lepmis.co.uk/wp-content/uploads/2015/09/foot-switch-robut-1024x1024.jpg                                                                                                                                                                             
-8	One Handed Game Controller                        	This PC Game Controller version of the ORTHROS one handed handset provides access to 16 buttons and two analogue joysticks, all accessible by just one hand.                                                                                                                                                                                                                                                                                                                                                        	http://www.lepmis.co.uk/wp-content/uploads/2015/09/Screen-Shot-2016-07-05-at-15.51.38.png                                                                                                                                                                      
-9	Switch Arcade Joystick                            	Each microswitch is terminated with a 3.5mm jack plug on a 0.5m cable. The joystick can be set to activate either one or two microswitches at the same time for four or eight direction output depending upon assembly.                                                                                                                                                                                                                                                                                             	http://www.lepmis.co.uk/wp-content/uploads/2015/09/SAP-JAS-1-1024x1024.jpg                                                                                                                                                                                     
-10	Switch Button Joystick                            	Standard Specs switch from Inclusive Technology. Available in different colours to allow customisation.                                                                                                                                                                                                                                                                                                                                                                                                             	http://www.lepmis.co.uk/wp-content/uploads/2015/09/switch-1024x1024.jpg                                                                                                                                                                                        
+1	Eyegaze	Eye gaze systems allow you to navigate and control your computer by tracking where you are looking. There are a variety of eye gaze cameras to help every individual find the most effective solution.	https://thinksmartbox.com/wp/wp-content/uploads/2015/07/Alea-Intelligaze_transparent_800-630x420.png
+2	Grid Pad Go	Small, thin and lightweight, the Grid Pad Go provides the perfect solution for people using touch or switch access on a portable device.	https://thinksmartbox.com/wp/wp-content/uploads/2015/10/Grid-Pad-Go-8-and-10-with-speaker.png
+3	Grid Pad Pro	A powerful device that is packed full of features, the Grid Pad Pro includes high-quality audio, multiple access options and our Servus environment control.	https://thinksmartbox.com/wp/wp-content/uploads/2016/05/Grid-Pad-Pro-Group-640x360.png
+4	Grid Pad Eye	Including all the features of the Pro model but with integrated eye gaze access. The Grid Pad Eye is available with a wide range of cameras to suit individual need.	https://thinksmartbox.com/wp/wp-content/uploads/2016/05/Grid-Pad-Eye-group-640x360.png
+5	Switch Access Pod for Playstation 3	The Game Access by LEPMIS PlayStation3 Switch Access Pod (PS3-SAP) replaces the standard controller of the SONY™ Playstation3 (or other games consoles by adding a cross-converter device) to enable gamers of all physical ability to use accessible switches and joysticks to enjoy a huge choice of video games plus subscription film, music and social media.	http://www.lepmis.co.uk/wp-content/uploads/2015/09/PS3-SAP-new-logo-1024x1024.jpg
+6	Heavy Duty Foot Switch	This unit is ideal for people who have good control of their feet and ankles, but can also be used by younger gamers who need to use a whole leg movement to activate a switch. This switch has quite a strong return spring and so can support the weight of a small persons foot and leg.	http://www.lepmis.co.uk/wp-content/uploads/2015/09/FSX-650x650.jpg
+7	Medium Duty Foot Switch	This metal foot switch is ideal for positioning under your foot. It will take the weight of your foot and leg resting on the pivot point, and then only a slight flex of your ankle will operate the switch.	http://www.lepmis.co.uk/wp-content/uploads/2015/09/foot-switch-robut-1024x1024.jpg
+8	One Handed Game Controller	This PC Game Controller version of the ORTHROS one handed handset provides access to 16 buttons and two analogue joysticks, all accessible by just one hand.	http://www.lepmis.co.uk/wp-content/uploads/2015/09/Screen-Shot-2016-07-05-at-15.51.38.png
+9	Switch Arcade Joystick	Each microswitch is terminated with a 3.5mm jack plug on a 0.5m cable. The joystick can be set to activate either one or two microswitches at the same time for four or eight direction output depending upon assembly.	http://www.lepmis.co.uk/wp-content/uploads/2015/09/SAP-JAS-1-1024x1024.jpg
+10	Switch Button Joystick	Standard Specs switch from Inclusive Technology. Available in different colours to allow customisation.	http://www.lepmis.co.uk/wp-content/uploads/2015/09/switch-1024x1024.jpg
 \.
 
 
@@ -460,9 +462,9 @@ SELECT pg_catalog.setval('gadget_video_id_seq', 16, true);
 --
 
 COPY mobility_score (id, scale) FROM stdin;
-1	Good      
-2	Medium    
-3	Some      
+1	Good
+2	Medium
+3	Some
 \.
 
 
@@ -470,16 +472,16 @@ COPY mobility_score (id, scale) FROM stdin;
 -- Data for Name: video; Type: TABLE DATA; Schema: hackers2017; Owner: irznfnkrlxvtzj
 --
 
-COPY video (id, youtube_id) FROM stdin;
-1	QOhJmREwLSo                                                                                                                                                                                                                                                    
-2	30QGu0-uctQ                                                                                                                                                                                                                                                    
-3	evkBrzeKnZQ                                                                                                                                                                                                                                                    
-4	5uhsUKFDiso                                                                                                                                                                                                                                                    
-5	ejPzD3o8aOs                                                                                                                                                                                                                                                    
-6	VMlbomJZFSg                                                                                                                                                                                                                                                    
-7	XOxPamsC6Oc                                                                                                                                                                                                                                                    
-8	Bd2BsLecH9o                                                                                                                                                                                                                                                    
-9	UvnzC3PhEMg                                                                                                                                                                                                                                                    
+COPY video (id, youtube_id, video_blurb, gamer_name) FROM stdin;
+7	XOxPamsC6Oc	Daryl's a hardcore gamer, despite his cerebral palsy. We've been working with him both in our Games Room and at his home to find a way for him to have independent control of his games on an Xbox 360 console.	Daryl
+8	Bd2BsLecH9o	Here's six year-old Elliott experiencing the magic of playing on an Xbox together with his friends and family for the first time.	Elliott
+9	UvnzC3PhEMg	Holly, who's a bubbly ten year-old with cerebral palsy, is racing cars on her PlayStation with her brother, something she's wanted to do for a very long time. She's controlling the cars through switches built into her headrest, which are normally used to steer her powered wheelchair. The SpecialEffect team have connected them to a PlayStation controller interface, giving her manoeuvres such as left and right steering, accelerate and brake.	Holly
+1	QOhJmREwLSo	Ceyda has cerebral palsy and finds using hand controls very difficult. But with this custom gaming setup from the team at SpecialEffect, a UK-based charity that help people with disabilities to enjoy video games, the frustration of having to watch her friends have all the fun is over. Here she is having a ball in Disney Infinity.	Ceyda
+2	30QGu0-uctQ	Here's Ajay, an IT support analyst with spinal muscular atrophy, explaining what it means to regain the ability to enjoy video games. He hadn't been able to play since he lost his hand dexterity when was 17 years old, but we introduced him to a chin-controlled joystick and voice control setup that's got him back in the game.	Ajay
+3	evkBrzeKnZQ	When Arlo's friends came round, they'd end up playing outside with his brother. Not any more. After our visit he's now overcoming his disabilities and practicing to take on his mates - and he means to win!	Arlo
+4	5uhsUKFDiso	Take a look at the short video below. It's about Ben, who never thought he'd be able to play video games because of his spinal muscular atrophy.  “I’ve never played a proper computer game,” he said. “I’ve always watched my friends play. Games are important to me because I can’t go out and play football like other kids so I do it on a computer screen.” We bluetoothed Ben's wheelchair joystick to a laptop so it could act as the left gaming stick for games like FIFA and Grand Turismo. We also rigged up a selection of light-touch switches for his fingers and connected them to the PlayStation via a couple of interfaces.	Ben
+5	ejPzD3o8aOs	Callum suffered a spinal injury as a result of a BMX accident, which left him paralysed from the shoulders down.\n\nUnable to use his hands, he'd given up the hope of ever being able to play on his Playstation with his friends and family again. But his occupational therapist at Stoke Mandeville Spinal Unit introduced SpecialEffect to him, and our team were able to make home visits to try out some controller setups which would allow him to play games using his chin.	Callum
+6	VMlbomJZFSg	Chloe and Ella, two girls with very different disabilities, having a fantastic time in our GamesRoom discovering which computer games they can play. And, most importantly, which ones they can play together. This video shows them discovering the fun of Once Upon a Monster and Just Dance on the Kinect. The two girls are now firm friends and have regular computer and video game play dates.	Chloe and Ella
 \.
 
 

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
+  <title>Special Effect - Get ready to play</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
 
@@ -20,7 +20,7 @@
 
 <body>
 
-<header class="header"></header>
+<header class="header"><div class="header_logo"></div></header>
 
 <nav class="main-nav">
   <ul class="main-nav-list">
@@ -52,190 +52,86 @@
     </li>
   </ul>
 </nav>
-
-<div class="masthead">
-  <div class="grid grid--flush guttered">
-    <div class="col-small-7">
-      <h1>Title Here</h1>
-      <p>Everyday carry kitsch brunch, williamsburg wolf viral twee etsy PBR&B pok pok migas farm-to-table kinfolk cardigan hashtag. Activated charcoal air plant lumbersexual tofu DIY copper mug, forage pug polaroid cold-pressed.</p>
-    </div>
-    <div class="col-small-5">
-      <img class="masthead_image img-responsive shadowed" src="http://yourshot.nationalgeographic.com/u/ss/fQYSUbVfts-T7pS2VP2wnKyN8wxywmXtY0-FwsgxpcdROaq53SJMiTM5XcTRNkOGiMzkpc0jrQ5d-rL27cmy/" alt="">
+<div id="render-area">
+  <div class="masthead">
+    <div class="grid grid--flush guttered">
+      <div class="col-small-7">
+        <h1>Get your game on</h1>
+        <p>Tell us what you’d like and the range of movement that applies and we’ll arrange an in-person consultation with one of our Occupational Therapists.</p>
+      </div>
+      <div class="col-small-5">
+        <img class="masthead_image img-responsive shadowed" src="http://yourshot.nationalgeographic.com/u/ss/fQYSUbVfts-T7pS2VP2wnKyN8wxywmXtY0-FwsgxpcdROaq53SJMiTM5XcTRNkOGiMzkpc0jrQ5d-rL27cmy/" alt="">
+      </div>
     </div>
   </div>
-</div>
 
-<div class="main guttered">
+  <div class="main guttered">
 
-<h2 class="padded-bottom-double">Which platform[s] do you want to use?</h2>
-<div class="platforms-picker js-platforms">
-  <label tabindex="1" class="platforms-picker_item js-platforms-item">
-    <span class="platforms-picker_item_icon platforms-picker_item_icon--xbox"></span>
-    <span class="platforms-picker_item_title">Xbox</span>
-    <input type="checkbox" name="platform_xbox">
-  </label>
-  <label tabindex="2" class="platforms-picker_item js-platforms-item">
-    <span class="platforms-picker_item_icon platforms-picker_item_icon--psx"></span>
-    <span class="platforms-picker_item_title">Playstation</span>
-    <input type="checkbox" name="platform_psx">
-  </label>
-  <label tabindex="3" class="platforms-picker_item js-platforms-item">
-    <span class="platforms-picker_item_icon platforms-picker_item_icon--wii"></span>
-    <span class="platforms-picker_item_title">Wii</span>
-    <input type="checkbox" name="platform_wii">
-  </label>
-  <label tabindex="4" class="platforms-picker_item js-platforms-item"><span class="platforms-picker_item_icon platforms-picker_item_icon--pc"></span><span class="platforms-picker_item_title">PC / Laptop</span><input type="checkbox" name="platform_pc"></label>
-  <label class="platforms-picker_item js-platforms-item"><span class="platforms-picker_item_icon platforms-picker_item_icon--noclue"></span><span class="platforms-picker_item_title">I don't mind</span><input type="checkbox" name="platform_noclue"></label>
-</div>
+  <h2 class="padded-bottom-double">Which platform[s] do you want to use?</h2>
+  <div class="platforms-picker js-platforms">
+    <label tabindex="1" class="platforms-picker_item js-platforms-item">
+      <span class="platforms-picker_item_icon platforms-picker_item_icon--xbox"></span>
+      <span class="platforms-picker_item_title">Xbox</span>
+      <input type="checkbox" name="platform_xbox">
+    </label>
+    <label tabindex="2" class="platforms-picker_item js-platforms-item">
+      <span class="platforms-picker_item_icon platforms-picker_item_icon--psx"></span>
+      <span class="platforms-picker_item_title">Playstation</span>
+      <input type="checkbox" name="platform_psx">
+    </label>
+    <label tabindex="3" class="platforms-picker_item js-platforms-item">
+      <span class="platforms-picker_item_icon platforms-picker_item_icon--wii"></span>
+      <span class="platforms-picker_item_title">Wii</span>
+      <input type="checkbox" name="platform_wii">
+    </label>
+    <label tabindex="4" class="platforms-picker_item js-platforms-item"><span class="platforms-picker_item_icon platforms-picker_item_icon--pc"></span><span class="platforms-picker_item_title">PC / Laptop</span><input type="checkbox" name="platform_pc"></label>
+    <label class="platforms-picker_item js-platforms-item"><span class="platforms-picker_item_icon platforms-picker_item_icon--noclue"></span><span class="platforms-picker_item_title">I don't mind</span><input type="checkbox" name="platform_noclue"></label>
+  </div>
 
-<h2 class="padded-bottom-double">Do you have a particular game in mind?</h2>
-<input tabindex="5" class="col-small-6" type="text" name="" value="" placeholder="E.g FIFA or Call of Duty">
-<p class="padded-bottom-quad">Just leave blank if you don’t mind</p>
-
-
-<form class="" action="#">
-<h2 class="padded-bottom-double">Control and mobility information</h2>
-  <div class="grid grid--flush question-section">
-    <div class="col-small-4">
-      <div class="face">
-        <div class="face_eye face_eye--left js-eye-left"></div>
-        <div class="face_eye face_eye--right js-eye-right"></div>
-      </div>
-      <img class="img-responsive" src="http://plainicon.com/download-icons/46957/plainicon.com-46957-0fe0-256px.png" >
-    </div>
-    <div class="col-small-8">
-      <h2 class="heading-underlined">Head</h2>
-      <div class="section-description">Select the appropriate level of control</div>
-      <div class="grid grid--flush ">
-
-        <div class="col-small-12 abilities-list">
-          <div class="js-trafficlight-widget trafficlight-container" data-name="Eyebrows"></div>
-          <div class="trafficlight-description">Eyebrows</div>
-        </div>
-
-        <div class="col-small-12 abilities-list">
-          <div class="js-trafficlight-widget trafficlight-container" data-name="Eyes"></div>
-          <div class="trafficlight-description">Eyes</div>
-        </div>
+  <h2 class="padded-bottom-double">Do you have a particular game in mind?</h2>
+  <input tabindex="5" class="col-small-6" type="text" name="" value="" placeholder="E.g FIFA or Call of Duty">
+  <p class="padded-bottom-quad">Just leave blank if you don’t mind</p>
 
 
-        <div class="col-small-12 abilities-list">
-          <div class="js-trafficlight-widget trafficlight-container" data-name="Speech"></div>
-          <div class="trafficlight-description">Speech</div>
-        </div>
-
-        <div class="col-small-12 abilities-list">
-          <div class="js-trafficlight-widget trafficlight-container" data-name="Mouth"></div>
-          <div class="trafficlight-description">Mouth</div>
-        </div>
-
-        <div class="col-small-12 abilities-list">
-          <div class="js-trafficlight-widget trafficlight-container" data-name="Neck"></div>
-          <div class="trafficlight-description">Neck</div>
-        </div>
-
-
-      </div> <!-- end grid -->
-    </div>
-
-  </div> <!-- end grid -->
-
-  <div class="grid question-section">
-    <div class="col-small-4">
-      <img class="img-responsive" src="http://image.flaticon.com/icons/png/512/30/30375.png" >
-    </div>
-    <div class="col-small-8">
-      <h2 class="heading-underlined">Upper body</h2>
-      <div class="section-description">Select the appropriate level of control</div>
-
-      <div class="grid grid--flush ">
-
-        <div class="col-small-12 abilities-list js-left-hand">
-          <div class="js-trafficlight-widget trafficlight-container" data-name="Left hand"></div>
-          <div class="trafficlight-description">Left hand</div>
-        </div>
-
-        <div class="col-small-12 abilities-list js-left-hand-thumb">
-          <div class="js-trafficlight-widget trafficlight-container" data-name="Left hand thumb"></div>
-          <div class="trafficlight-description"><span class="half-opacity ">&rdsh;</span> Left hand thumb</div>
-        </div>
-
-        <div class="col-small-12 abilities-list js-left-hand-fingers">
-          <div class="js-trafficlight-widget trafficlight-container" data-name="Left hand fingers"></div>
-          <div class="trafficlight-description"><span class="half-opacity ">&rdsh;</span> Left hand fingers</div>
-        </div>
-
-        <div class="col-small-12 abilities-list js-right-hand">
-          <div class="js-trafficlight-widget trafficlight-container" data-name="Right hand"></div>
-          <div class="trafficlight-description">Right hand</div>
-        </div>
-
-        <div class="col-small-12 abilities-list js-right-hand-thumb">
-          <div class="js-trafficlight-widget trafficlight-container" data-name="Right hand thumb"></div>
-          <div class="trafficlight-description"><span class="half-opacity ">&rdsh;</span> Right hand thumb</div>
-        </div>
-
-        <div class="col-small-12 abilities-list js-right-hand-fingers">
-          <div class="js-trafficlight-widget trafficlight-container" data-name="Right hand fingers"></div>
-          <div class="trafficlight-description"><span class="half-opacity ">&rdsh;</span> Right hand fingers</div>
-        </div>
-
-        <div class="col-small-12 abilities-list">
-          <div class="js-trafficlight-widget trafficlight-container" data-name="Left forearm"></div>
-          <div class="trafficlight-description">Left forearm</div>
-        </div>
-
-        <div class="col-small-12 abilities-list">
-          <div class="js-trafficlight-widget trafficlight-container" data-name="Right forearm"></div>
-          <div class="trafficlight-description">Right forearm</div>
-        </div>
-
-        <div class="col-small-12 abilities-list">
-          <div class="js-trafficlight-widget trafficlight-container" data-name="Left upper arm"></div>
-          <div class="trafficlight-description">Left upper arm</div>
-        </div>
-
-        <div class="col-small-12 abilities-list">
-          <div class="js-trafficlight-widget trafficlight-container" data-name="Right upper arm"></div>
-          <div class="trafficlight-description">Right upper arm</div>
-        </div>
-
-
-
-      </div> <!-- end grid -->
-    </div>
-
-  </div> <!-- end grid -->
-
-
-    <div class="grid question-section">
+  <form class="" action="#">
+  <h2 class="padded-bottom-double">Control and mobility information</h2>
+    <div class="grid grid--flush question-section">
       <div class="col-small-4">
-        <img class="img-responsive" src="https://s3.amazonaws.com/uploads.hipchat.com/314322/2278251/iwgglIqyZ3EV9mp/man.png" >
+        <div class="face">
+          <div class="face_eye face_eye--left js-eye-left"></div>
+          <div class="face_eye face_eye--right js-eye-right"></div>
+        </div>
+        <img class="img-responsive" src="http://plainicon.com/download-icons/46957/plainicon.com-46957-0fe0-256px.png" >
       </div>
       <div class="col-small-8">
-        <h2 class="heading-underlined">Lower body</h2>
+        <h2 class="heading-underlined">Head</h2>
         <div class="section-description">Select the appropriate level of control</div>
-
         <div class="grid grid--flush ">
 
           <div class="col-small-12 abilities-list">
-            <div class="js-trafficlight-widget trafficlight-container" data-name="Left leg"></div>
-            <div class="trafficlight-description">Left leg</div>
+            <div class="js-trafficlight-widget trafficlight-container" data-name="Eyebrows"></div>
+            <div class="trafficlight-description">Eyebrows</div>
           </div>
 
           <div class="col-small-12 abilities-list">
-            <div class="js-trafficlight-widget trafficlight-container" data-name="Right leg"></div>
-            <div class="trafficlight-description">Right leg</div>
+            <div class="js-trafficlight-widget trafficlight-container" data-name="Eyes"></div>
+            <div class="trafficlight-description">Eyes</div>
+          </div>
+
+
+          <div class="col-small-12 abilities-list">
+            <div class="js-trafficlight-widget trafficlight-container" data-name="Speech"></div>
+            <div class="trafficlight-description">Speech</div>
           </div>
 
           <div class="col-small-12 abilities-list">
-            <div class="js-trafficlight-widget trafficlight-container" data-name="Left foot"></div>
-            <div class="trafficlight-description">Left foot</div>
+            <div class="js-trafficlight-widget trafficlight-container" data-name="Mouth"></div>
+            <div class="trafficlight-description">Mouth</div>
           </div>
 
           <div class="col-small-12 abilities-list">
-            <div class="js-trafficlight-widget trafficlight-container" data-name="Right foot"></div>
-            <div class="trafficlight-description">Right foot</div>
+            <div class="js-trafficlight-widget trafficlight-container" data-name="Neck"></div>
+            <div class="trafficlight-description">Neck</div>
           </div>
 
 
@@ -244,20 +140,124 @@
 
     </div> <!-- end grid -->
 
+    <div class="grid question-section">
+      <div class="col-small-4">
+        <img class="img-responsive" src="http://image.flaticon.com/icons/png/512/30/30375.png" >
+      </div>
+      <div class="col-small-8">
+        <h2 class="heading-underlined">Upper body</h2>
+        <div class="section-description">Select the appropriate level of control</div>
 
-  <div class="grid question-section">
+        <div class="grid grid--flush ">
 
-    <div class="col-small-12 text-right">
-      <button class="btn js-submit-step-1">Submit your answers</button>
-    </div>
+          <div class="col-small-12 abilities-list js-left-hand">
+            <div class="js-trafficlight-widget trafficlight-container" data-name="Left hand"></div>
+            <div class="trafficlight-description">Left hand</div>
+          </div>
 
-  </div> <!-- end grid -->
+          <div class="col-small-12 abilities-list js-left-hand-thumb">
+            <div class="js-trafficlight-widget trafficlight-container" data-name="Left hand thumb"></div>
+            <div class="trafficlight-description"><span class="half-opacity ">&rdsh;</span> Thumb</div>
+          </div>
+
+          <div class="col-small-12 abilities-list js-left-hand-fingers">
+            <div class="js-trafficlight-widget trafficlight-container" data-name="Left hand fingers"></div>
+            <div class="trafficlight-description"><span class="half-opacity ">&rdsh;</span> Fingers</div>
+          </div>
+
+          <div class="col-small-12 abilities-list js-right-hand">
+            <div class="js-trafficlight-widget trafficlight-container" data-name="Right hand"></div>
+            <div class="trafficlight-description">Right hand</div>
+          </div>
+
+          <div class="col-small-12 abilities-list js-right-hand-thumb">
+            <div class="js-trafficlight-widget trafficlight-container" data-name="Right hand thumb"></div>
+            <div class="trafficlight-description"><span class="half-opacity ">&rdsh;</span> Thumb</div>
+          </div>
+
+          <div class="col-small-12 abilities-list js-right-hand-fingers">
+            <div class="js-trafficlight-widget trafficlight-container" data-name="Right hand fingers"></div>
+            <div class="trafficlight-description"><span class="half-opacity ">&rdsh;</span> Fingers</div>
+          </div>
+
+          <div class="col-small-12 abilities-list">
+            <div class="js-trafficlight-widget trafficlight-container" data-name="Left forearm"></div>
+            <div class="trafficlight-description">Left forearm</div>
+          </div>
+
+          <div class="col-small-12 abilities-list">
+            <div class="js-trafficlight-widget trafficlight-container" data-name="Right forearm"></div>
+            <div class="trafficlight-description">Right forearm</div>
+          </div>
+
+          <div class="col-small-12 abilities-list">
+            <div class="js-trafficlight-widget trafficlight-container" data-name="Left upper arm"></div>
+            <div class="trafficlight-description">Left upper arm</div>
+          </div>
+
+          <div class="col-small-12 abilities-list">
+            <div class="js-trafficlight-widget trafficlight-container" data-name="Right upper arm"></div>
+            <div class="trafficlight-description">Right upper arm</div>
+          </div>
 
 
-</form>
 
-</div> <!-- end main -->
+        </div> <!-- end grid -->
+      </div>
 
+    </div> <!-- end grid -->
+
+
+      <div class="grid question-section">
+        <div class="col-small-4">
+          <img class="img-responsive" src="https://s3.amazonaws.com/uploads.hipchat.com/314322/2278251/iwgglIqyZ3EV9mp/man.png" >
+        </div>
+        <div class="col-small-8">
+          <h2 class="heading-underlined">Lower body</h2>
+          <div class="section-description">Select the appropriate level of control</div>
+
+          <div class="grid grid--flush ">
+
+            <div class="col-small-12 abilities-list">
+              <div class="js-trafficlight-widget trafficlight-container" data-name="Left leg"></div>
+              <div class="trafficlight-description">Left leg</div>
+            </div>
+
+            <div class="col-small-12 abilities-list">
+              <div class="js-trafficlight-widget trafficlight-container" data-name="Right leg"></div>
+              <div class="trafficlight-description">Right leg</div>
+            </div>
+
+            <div class="col-small-12 abilities-list">
+              <div class="js-trafficlight-widget trafficlight-container" data-name="Left foot"></div>
+              <div class="trafficlight-description">Left foot</div>
+            </div>
+
+            <div class="col-small-12 abilities-list">
+              <div class="js-trafficlight-widget trafficlight-container" data-name="Right foot"></div>
+              <div class="trafficlight-description">Right foot</div>
+            </div>
+
+
+          </div> <!-- end grid -->
+        </div>
+
+      </div> <!-- end grid -->
+
+
+    <div class="grid question-section">
+
+      <div class="col-small-12 text-right">
+        <button class="btn js-submit-step-1">Submit your answers</button>
+      </div>
+
+    </div> <!-- end grid -->
+
+
+  </form>
+
+  </div> <!-- end main -->
+</div> <!-- end render-area -->
 <script src="js/jquery.min.js"></script>
 <script src="js/scripts.js"></script>
 

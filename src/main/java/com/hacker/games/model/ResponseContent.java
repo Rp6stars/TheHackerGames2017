@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by alireza.fallahi on 27/01/2017.
  */
-public class Content {
+public class ResponseContent {
 
     private List<Gadget> gadgetList;
 

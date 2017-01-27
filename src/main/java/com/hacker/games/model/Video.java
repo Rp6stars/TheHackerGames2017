@@ -11,7 +11,7 @@ import java.util.List;
 @NamedQuery(name = "Video.findByGadgetId",
         query = "SELECT v FROM Video v JOIN v.gadgetIDs g where g = ?1")
 @Table(name = "video")
-public class Video implements Content{
+public class Video {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

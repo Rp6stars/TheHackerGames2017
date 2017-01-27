@@ -4,7 +4,6 @@ import com.hacker.games.model.Gadget;
 import com.hacker.games.model.Video;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -13,5 +12,5 @@ import java.util.Set;
 @Service
 public interface VideoService {
 
-    List<Video>  getVideosForGadgetList(List<Gadget> gadgetList);
+    Set<Video>  getVideosForGadgetSet(Set<Gadget> gadgetSet);
 }

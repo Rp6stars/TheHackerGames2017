@@ -3,30 +3,30 @@ package com.hacker.games.api.model;
 import com.hacker.games.model.Gadget;
 import com.hacker.games.model.Video;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  * Created by alireza.fallahi on 27/01/2017.
  */
 public class ResponseContent {
 
-    private List<Gadget> gadgetList;
+    private Set<Gadget> gadgetSet;
 
-    private List<Video> videoList;
+    private Set<Video> videoSet;
 
-    public List<Gadget> getGadgetList() {
-        return gadgetList;
+    public Set<Gadget> getGadgetSet() {
+        return gadgetSet;
     }
 
-    public void setGadgetList(List<Gadget> gadgetList) {
-        this.gadgetList = gadgetList;
+    public void setGadgetSet(Set<Gadget> gadgetSet) {
+        this.gadgetSet = gadgetSet;
     }
 
-    public List<Video> getVideoList() {
-        return videoList;
+    public Set<Video> getVideoSet() {
+        return videoSet;
     }
 
-    public void setVideoList(List<Video> videoList) {
-        this.videoList = videoList;
+    public void setVideoSet(Set<Video> videoSet) {
+        this.videoSet = videoSet;
     }
 }

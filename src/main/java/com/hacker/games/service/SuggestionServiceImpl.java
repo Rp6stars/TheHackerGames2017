@@ -10,8 +10,9 @@ import com.hacker.games.repo.GadgetSuggestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by alireza.fallahi on 26/01/2017.
@@ -31,7 +32,7 @@ public class SuggestionServiceImpl implements SuggestionService {
 
         ResponseContent responseContent = new ResponseContent();
 
-        List<GadgetSuggestion> gadgetSuggestions= new ArrayList<>();
+        Set<GadgetSuggestion> gadgetSuggestions= new HashSet<>();
         for(Input input: inputs) {
             input.setId(bodyPartRepository.findByNameLike(input.getName()).getId());
         }
@@ -40,14 +41,14 @@ public class SuggestionServiceImpl implements SuggestionService {
             gadgetSuggestions.addAll(gadgetSuggestionRepository.findByMobilityScoreIdAndBodyPartId(Integer.valueOf(input.getValue()), input.getId()));
         }
 
-        List<Gadget> listOfGadgets = new ArrayList<>();
+        Set<Gadget> gadgets = new HashSet<>();
         for (GadgetSuggestion gadgetSuggestion : gadgetSuggestions) {
-            listOfGadgets.add(gadgetSuggestion.getGadget());
+            gadgets.add(gadgetSuggestion.getGadget());
         }
-        List<Video> videoList = videoService.getVideosForGadgetList(listOfGadgets);
+        Set<Video> videoList = videoService.getVideosForGadgetSet(gadgets);
 
-        responseContent.setGadgetList(listOfGadgets);
-        responseContent.setVideoList(videoList);
+        responseContent.setGadgetSet(gadgets);
+        responseContent.setVideoSet(videoList);
 
         return responseContent;
     }
